@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://thomassshaw.github.io/gh-pages/sitemap.xml
