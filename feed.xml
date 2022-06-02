@@ -3,12 +3,194 @@
     <title>Thomas Shaw | Blog</title>
     <link href="https://thomassshaw.github.io/feed.xml" rel="self" />
     <link href="https://thomassshaw.github.io" />
-    <updated>2022-06-01T16:13:02+08:00</updated>
+    <updated>2022-06-02T14:41:15+08:00</updated>
     <author>
         <name>Thomas Shaw</name>
     </author>
     <id>https://thomassshaw.github.io</id>
 
+    <entry>
+        <title>TryHackMe - OhSINT Walkthrough</title>
+        <author>
+            <name>Thomas Shaw</name>
+        </author>
+        <link href="https://thomassshaw.github.io/tryhackme-ohsint-walkthrough/"/>
+        <id>https://thomassshaw.github.io/tryhackme-ohsint-walkthrough/</id>
+            <category term="walkthrough"/>
+            <category term="osint"/>
+            <category term="ctf"/>
+
+        <updated>2022-06-02T14:41:15+08:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://thomassshaw.github.io/media/posts/4/cover.png" alt="" />
+                    
+  <p>
+    <a href="https://tryhackme.com/room/ohsint" target="_blank">OhSINT</a>&nbsp;is a free room on the TryHackMe platform. The objective of this challenge is to use open-source intelligence techniques to obtain the flags.
+  </p>
+
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://thomassshaw.github.io/media/posts/4/cover.png" alt="" />
+                
+  <p>
+    <a href="https://tryhackme.com/room/ohsint" target="_blank">OhSINT</a>&nbsp;is a free room on the TryHackMe platform. The objective of this challenge is to use open-source intelligence techniques to obtain the flags.
+  </p>
+
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/1.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/1-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/1-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/1-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/1-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/1-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/1-2xl.png 1600w"  height="1080" width="1920" alt="" />
+      
+    </figure>
+
+  <p>
+    This is the photo provided for us. Using ExifTool, we can view the metadata of this photo and extract the important pieces of information such as copyright and GPS latitude and longitude.This is the photo provided for us. Using ExifTool, we can view the metadata of this photo and extract the important pieces of information such as copyright and GPS latitude and longitude.<line-separator></line-separator>
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/2.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/2-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/2-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/2-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/2-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/2-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/2-2xl.png 1600w"  height="425" width="594" alt="" />
+      
+    </figure>
+
+  <p>
+    <b>Question 1: What is this users avatar of?
+</b><br>
+<br>We can search our target username (OWoodflint) on Google. We then get three results associated with our target, a Twitter account, a WordPress blog, and a GitHub account. We need to explore it one by one to find the account with an avatar.&nbsp;
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/3.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/3-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/3-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/3-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/3-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/3-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/3-2xl.png 1600w"  height="559" width="759" alt="" />
+      
+    </figure>
+
+  <p>
+    Then, we will find that the avatar of our target Twitter account is a cat.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/4.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/4-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/4-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/4-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/4-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/4-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/4-2xl.png 1600w"  height="312" width="600" alt="" />
+      
+    </figure>
+
+  <p>
+    <code>Ans:&nbsp;cat</code>
+  </p>
+
+  <p>
+    <b>Question 2: What city is this person in?</b>
+  </p>
+
+  <p>
+    There is a post on the Twitter account that captures our interest. It is a post about a BSSID of an access point near the target’s house.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/5.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/5-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/5-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/5-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/5-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/5-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/5-2xl.png 1600w"  height="174" width="506" alt="" />
+      
+    </figure>
+
+  <p>
+    We can use <a href="https://wigle.net/" target="_blank">WiGLE</a>&nbsp;to see the location. Simply put the BSSID in the search field.
+  </p>
+
+  <div  class="gallery-wrapper">
+    <div class="gallery" data-columns="2">
+      <figure class="gallery__item">
+      <a href="https://thomassshaw.github.io/media/posts/4/gallery/6.png" data-size="775x331">
+        <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/gallery/6-thumbnail.png" height="308" width="720" alt="" />
+      </a>
+      
+    </figure><figure class="gallery__item">
+      <a href="https://thomassshaw.github.io/media/posts/4/gallery/7.png" data-size="501x489">
+        <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/gallery/7-thumbnail.png" height="489" width="501" alt="" />
+      </a>
+      
+    </figure>
+    </div>
+  </div>
+
+  <p>
+    <code>Ans: London</code>
+  </p>
+
+  <p>
+    <b>Question 3: Whats the SSID of the WAP he connected to?</b>
+  </p>
+
+  <p>
+    This information also can be found by using WiGLE.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/8.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/8-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/8-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/8-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/8-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/8-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/8-2xl.png 1600w"  height="123" width="694" alt="" />
+      
+    </figure>
+
+  <p>
+    <code>Ans:&nbsp;UnileverWifi</code>
+  </p>
+
+  <p>
+    <b>Question 4: What is his personal email address?
+<br>Question 5: What site did you find his email address on?</b>
+  </p>
+
+  <p>
+    We can check out our target GitHub to look for the email address. There is only one repo called `people_finder`. Clicking at the repo, we can get the email address.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/9.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/9-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/9-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/9-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/9-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/9-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/9-2xl.png 1600w"  height="487" width="915" alt="" />
+      
+    </figure>
+
+  <p>
+    <code>Ans: OWoodflint@gmail.com
+<br>&nbsp;Ans: GitHub</code>
+  </p>
+
+  <p>
+    <b>Question 6: Where has he gone on holiday?</b>
+  </p>
+
+  <p>
+    We need to visit our target blog and the only post there will give us the answer.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/10.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/10-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/10-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/10-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/10-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/10-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/10-2xl.png 1600w"  height="598" width="880" alt="" />
+      
+    </figure>
+
+  <p>
+    <code>Ans: New York</code>
+  </p>
+
+  <p>
+    <b>Question 7: What is this persons password?</b>
+  </p>
+
+  <p>
+    Looking through Twitter and GitHub, we can't seem to find any information regarding our target passwords. We need to revisit the blog and this time looking at the source code. There is one paragraph with text in white color. As the background of the blog is white, we can't see it normally.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://thomassshaw.github.io/media/posts/4/11.png" sizes="100vw" srcset="https://thomassshaw.github.io/media/posts/4/responsive/11-xs.png 300w ,https://thomassshaw.github.io/media/posts/4/responsive/11-sm.png 480w ,https://thomassshaw.github.io/media/posts/4/responsive/11-md.png 768w ,https://thomassshaw.github.io/media/posts/4/responsive/11-lg.png 1024w ,https://thomassshaw.github.io/media/posts/4/responsive/11-xl.png 1360w ,https://thomassshaw.github.io/media/posts/4/responsive/11-2xl.png 1600w"  height="115" width="643" alt="" />
+      
+    </figure>
+
+  <p>
+    <code>Ans:&nbsp;pennYDr0pper.!</code>
+  </p>
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>TryHackMe - Sakura Walkthrough</title>
         <author>
